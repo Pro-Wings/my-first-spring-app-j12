@@ -1,0 +1,20 @@
+package com.prowings.circulardependency;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestCircularDependency {
+	
+	public static void main(String[] args) {
+		
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-beans-circulardependency.xml");
+		
+		A beanA = context.getBean(A.class, "a");
+
+		B beanB = context.getBean(B.class, "b");
+		
+		System.out.println(beanA);
+		System.out.println(beanB);
+	}
+
+}
