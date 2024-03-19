@@ -9,7 +9,9 @@ public class TestCircularDependency {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring-beans-circulardependency.xml");
 		
-		A beanA = context.getBean(A.class, "a");
+//		A beanA = context.getBean(A.class, "a");
+
+		A2 beanA = context.getBean(A2.class, "a");
 
 		B beanB = context.getBean(B.class, "b");
 		

@@ -15,6 +15,11 @@ public class A {
 		System.out.println("inside A(B b) constructor!!");
 	}
 
+	public void init()
+	{
+		System.out.println("setting circular dependency using custom init method!!");
+		b.setA(this);
+	}
 
 	public B getB() {
 		return b;
